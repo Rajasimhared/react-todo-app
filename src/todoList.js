@@ -7,7 +7,7 @@ export default class TodoList extends Component{
 		var createItem = function(itemText){
 			if(itemText){	
 			return(		
-				<TodoListItem>{itemText}</TodoListItem>
+				<TodoListItem >{itemText}</TodoListItem>
 			);
 		}
 		}

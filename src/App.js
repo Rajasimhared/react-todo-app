@@ -15,13 +15,17 @@ export default class App extends Component {
     var allItems = this.state.items.concat([newItem]);
     this.setState({items: allItems});
   }
-
+  delete(id){
+      this.setState(prevState => ({
+          items: prevState.items.filter(el => el != id )
+      }));
+   }
   render() {
     return (
       <div>
         <TodoHeader/>
         <TodoForm onFormSubmit={this.updateItems}/>
-        <TodoList items={this.state.items}/>
+        <TodoList delete={this.delete} items={this.state.items}/>
       </div>
     );
   }
